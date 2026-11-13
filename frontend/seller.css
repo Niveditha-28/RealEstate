@@ -1,0 +1,1496 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #14213d;
+}
+
+.navbar {
+    background: #14213d;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#logoutBtn {
+    background: #fca311;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin: 16px 0 8px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+#submitBtn {
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #fca311;
+    color: #14213d;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#formMessage {
+    margin-top: 15px;
+}
+
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.edit-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #14213d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+#cancelEditBtn:not([hidden]) {
+    margin-left: 10px;
+    padding: 13px 20px;
+    background: #e5e7eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* PROPERTY IMAGE UPLOAD */
+
+#propertyImages {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.image-preview img {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* SELLER ENQUIRIES */
+
+.seller-enquiries-section {
+    margin-top: 35px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.enquiries-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.enquiries-heading h2 {
+    margin: 0;
+    color: #14213d;
+}
+
+#refreshEnquiriesBtn {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #14213d;
+    color: white;
+    cursor: pointer;
+}
+
+.seller-enquiries-list {
+    display: grid;
+    gap: 15px;
+}
+
+.seller-enquiry-card {
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.seller-enquiry-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.seller-enquiry-top h3 {
+    margin: 0;
+    color: #14213d;
+}
+
+.seller-enquiry-message {
+    margin: 14px 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.enquiry-status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.enquiry-date {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* SELLER ENQUIRY REPLIES */
+
+.seller-reply-form {
+    margin-top: 16px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.seller-reply-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.seller-reply-btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #14213d;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.seller-reply-btn:hover {
+    background: #263e68;
+}
+
+.seller-reply-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.seller-reply-status {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #166534;
+}
+
+.seller-reply-display {
+    margin-top: 15px;
+    padding: 15px;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+}
+
+.seller-reply-display p {
+    margin: 8px 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* PROPERTY VISIT MANAGEMENT */
+
+.seller-visit-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.seller-visit-card h3 {
+    margin: 0 0 12px;
+    color: #14213d;
+}
+
+.seller-visit-card p {
+    margin: 8px 0;
+}
+
+.visit-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.visit-complete-btn,
+.visit-cancel-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.visit-complete-btn {
+    background: #15803d;
+}
+
+.visit-cancel-btn {
+    background: #dc2626;
+}
+
+.visit-complete-btn:hover {
+    background: #166534;
+}
+
+.visit-cancel-btn:hover {
+    background: #b91c1c;
+}
+
+/* SELLER BOOKING REQUESTS */
+
+.seller-bookings-section {
+    margin-top: 25px;
+}
+
+.seller-booking-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.seller-booking-card h3 {
+    margin: 0 0 12px;
+    color: #14213d;
+}
+
+.seller-booking-card p {
+    margin: 8px 0;
+    color: #475569;
+}
+
+/* BOOKING MANAGEMENT BUTTONS */
+
+.booking-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.booking-confirm-btn,
+.booking-cancel-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.booking-confirm-btn {
+    background: #15803d;
+}
+
+.booking-confirm-btn:hover {
+    background: #166534;
+}
+
+.booking-cancel-btn {
+    background: #dc2626;
+}
+
+.booking-cancel-btn:hover {
+    background: #b91c1c;
+}
+
+.booking-confirm-btn:disabled,
+.booking-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* FINALIZE SALE BUTTON */
+
+.finalize-sale-btn {
+    background: #15803d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.finalize-sale-btn:hover {
+    background: #166534;
+}
+
+.finalize-sale-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* CREATE RENTAL AGREEMENT BUTTON */
+
+.create-rental-btn {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 18px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.create-rental-btn:hover {
+    background: #6d28d9;
+}
+
+.create-rental-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   SELLER TRANSACTION HISTORY
+===================================== */
+
+.seller-transaction-section {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.seller-transaction-section h2 {
+    color: #14213d;
+    margin-bottom: 10px;
+}
+
+.seller-transaction-group {
+    margin-top: 25px;
+}
+
+.seller-transaction-group h3 {
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.seller-transaction-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.seller-transaction-card h4 {
+    margin: 0 0 12px;
+    color: #14213d;
+}
+
+.seller-transaction-card p {
+    margin: 8px 0;
+    color: #475569;
+}
+
+/* ==========================================
+   REALESTATE HUB — SELLER DASHBOARD
+   MODERN MINIMAL SAGE & CREAM
+   PHASE 1: NAVBAR, BACKGROUND, FORM
+========================================== */
+
+:root {
+    --sage: #78947e;
+    --sage-dark: #304c40;
+    --sage-light: #e8f0e7;
+    --cream: #f8f6f0;
+    --sand: #e8e2d6;
+    --text: #26332d;
+    --muted: #748078;
+    --white: #ffffff;
+    --border: #e3e9df;
+}
+
+/* PAGE BACKGROUND */
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    background: var(--white);
+    color: var(--sage-dark);
+    padding: 20px 6%;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 16px rgba(48,76,64,0.04);
+}
+
+.navbar h2 {
+    color: var(--sage-dark);
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.nav-right {
+    gap: 22px;
+}
+
+#welcomeSeller {
+    color: #5d7164;
+    font-weight: 500;
+}
+
+#logoutBtn {
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    border: 1px solid #d3e1d1;
+    border-radius: 10px;
+    padding: 11px 22px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#logoutBtn:hover {
+    background: #d5e4d3;
+}
+
+/* MAIN CONTENT */
+
+main {
+    max-width: 1250px;
+    margin: 48px auto 70px;
+    padding: 0 28px;
+}
+
+main > h1 {
+    color: var(--sage-dark);
+    font-size: clamp(30px, 3vw, 40px);
+    letter-spacing: -1px;
+    margin: 0 0 8px;
+}
+
+main > p {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 0 32px;
+}
+
+/* FORM CONTAINER */
+
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    margin-top: 28px;
+    box-shadow: 0 8px 30px rgba(48,76,64,0.06);
+}
+
+.form-card h2 {
+    color: var(--sage-dark);
+    font-size: 25px;
+    letter-spacing: -0.6px;
+    margin: 0 0 24px;
+}
+
+/* TWO-COLUMN FORM GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+.form-grid > div {
+    min-width: 0;
+}
+
+/* FORM LABELS */
+
+#propertyForm label {
+    display: block;
+    color: var(--sage-dark);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 14px 0 8px;
+}
+
+/* FORM INPUTS */
+
+#propertyForm input,
+#propertyForm select,
+#propertyForm textarea {
+    width: 100%;
+    background: #f8faf7;
+    color: var(--text);
+    border: 1px solid #d8e3d7;
+    border-radius: 11px;
+    padding: 13px 15px;
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#propertyForm textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+#propertyForm input:focus,
+#propertyForm select:focus,
+#propertyForm textarea:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(120,148,126,0.14);
+}
+
+#propertyForm input::placeholder,
+#propertyForm textarea::placeholder {
+    color: #9ca99f;
+}
+
+/* IMAGE UPLOAD */
+
+.form-group {
+    margin-top: 22px;
+    padding: 20px;
+    background: #f8faf7;
+    border: 1px dashed #bdcfba;
+    border-radius: 14px;
+}
+
+#propertyImages {
+    background: white;
+    cursor: pointer;
+}
+
+#propertyImages::file-selector-button {
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    border: 1px solid #d3e1d1;
+    border-radius: 8px;
+    padding: 9px 14px;
+    margin-right: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-group small {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.image-preview {
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.image-preview img {
+    width: 125px;
+    height: 105px;
+    object-fit: cover;
+    border: 2px solid #e3e9df;
+    border-radius: 11px;
+}
+
+/* SUBMIT BUTTON */
+
+#submitBtn {
+    margin-top: 28px;
+    padding: 14px 28px;
+    background: var(--sage-dark);
+    color: white;
+    border: none;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#submitBtn:hover {
+    background: #54745e;
+    transform: translateY(-1px);
+}
+
+#submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#formMessage {
+    color: var(--sage-dark);
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+/* CANCEL EDIT BUTTON */
+
+#cancelEditBtn:not([hidden]) {
+    background: #e8f0e7;
+    color: #304c40;
+    border: 1px solid #d3e1d1;
+    border-radius: 10px;
+    padding: 13px 22px;
+    margin-left: 12px;
+}
+
+#cancelEditBtn:hover {
+    background: #d5e4d3;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    main {
+        padding: 0 18px;
+        margin-top: 32px;
+    }
+
+    .form-card {
+        padding: 24px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .nav-right {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #submitBtn {
+        transition: none;
+    }
+
+    #submitBtn:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   SELLER DASHBOARD — PHASE 2
+   MY PROPERTIES & BUYER ENQUIRIES
+========================================== */
+
+/* MY PROPERTIES */
+
+#myProperties {
+    display: grid;
+    gap: 18px;
+    color: #617267;
+}
+
+/* Property cards created by JavaScript */
+#myProperties > div {
+    background: #f8faf7;
+    border: 1px solid #dfe8dc;
+    border-radius: 16px;
+    padding: 22px;
+    min-width: 0;
+    box-shadow: 0 4px 16px rgba(48,76,64,0.04);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#myProperties > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(48,76,64,0.09);
+}
+
+#myProperties h3,
+#myProperties h4 {
+    color: #304c40;
+    margin-top: 0;
+}
+
+#myProperties p {
+    color: #617267;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+#myProperties img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* EDIT PROPERTY BUTTON */
+
+.edit-btn {
+    background: #304c40;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.edit-btn:hover:not(:disabled) {
+    background: #54745e;
+}
+
+.edit-btn:disabled {
+    background: #aab8ad;
+    cursor: not-allowed;
+}
+
+/* BUYER ENQUIRIES SECTION */
+
+.seller-enquiries-section {
+    margin-top: 32px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e3e9df;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(48,76,64,0.05);
+}
+
+.enquiries-heading {
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.enquiries-heading h2 {
+    color: #304c40;
+    font-size: 25px;
+    letter-spacing: -0.6px;
+}
+
+#refreshEnquiriesBtn {
+    background: #e8f0e7;
+    color: #304c40;
+    border: 1px solid #d3e1d1;
+    border-radius: 10px;
+    padding: 11px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#refreshEnquiriesBtn:hover {
+    background: #d5e4d3;
+}
+
+/* ENQUIRY LIST */
+
+.seller-enquiries-list {
+    display: grid;
+    gap: 18px;
+}
+
+/* INDIVIDUAL ENQUIRY CARD */
+
+.seller-enquiry-card {
+    background: #f8faf7;
+    border: 1px solid #dfe8dc;
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 0;
+    box-shadow: none;
+}
+
+.seller-enquiry-top {
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.seller-enquiry-top h3 {
+    color: #304c40;
+    font-size: 19px;
+    letter-spacing: -0.3px;
+}
+
+/* ENQUIRY MESSAGE */
+
+.seller-enquiry-message {
+    color: #52675a;
+    background: #ffffff;
+    border: 1px solid #e3e9df;
+    border-radius: 11px;
+    padding: 16px;
+    margin: 18px 0;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* STATUS BADGE */
+
+.enquiry-status-badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #e3f1e6;
+    color: #286443;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.enquiry-date {
+    color: #748078;
+    font-size: 13px;
+}
+
+/* REPLY FORM */
+
+.seller-reply-form {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #dfe8dc;
+}
+
+.seller-reply-input {
+    background: #ffffff;
+    color: #26332d;
+    border: 1px solid #d8e3d7;
+    border-radius: 11px;
+    padding: 14px;
+    min-height: 105px;
+    line-height: 1.6;
+}
+
+.seller-reply-input:focus {
+    outline: none;
+    border-color: #78947e;
+    box-shadow: 0 0 0 3px rgba(120,148,126,0.14);
+}
+
+/* SEND REPLY BUTTON */
+
+.seller-reply-btn {
+    background: #304c40;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.seller-reply-btn:hover:not(:disabled) {
+    background: #54745e;
+}
+
+.seller-reply-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* REPLY STATUS */
+
+.seller-reply-status {
+    color: #286443;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+/* PREVIOUS REPLY DISPLAY */
+
+.seller-reply-display {
+    margin-top: 18px;
+    padding: 18px;
+    background: #edf3eb;
+    border-left: 4px solid #78947e;
+    border-radius: 10px;
+    color: #304c40;
+}
+
+.seller-reply-display p {
+    color: #52675a;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* EMPTY STATES */
+
+#sellerEnquiriesList > p {
+    color: #748078;
+    background: #f8faf7;
+    border: 1px dashed #cddcc9;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .seller-enquiries-section {
+        padding: 22px 18px;
+    }
+
+    #myProperties > div,
+    .seller-enquiry-card {
+        padding: 18px;
+    }
+
+    .enquiries-heading h2 {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #myProperties > div {
+        transition: none;
+    }
+
+    #myProperties > div:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   SELLER DASHBOARD — PHASE 3
+   PROPERTY VISITS & BOOKING REQUESTS
+========================================== */
+
+/* SECTION CONTAINERS */
+
+.seller-visits-section,
+.seller-bookings-section {
+    margin-top: 32px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e3e9df;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(48,76,64,0.05);
+}
+
+.seller-visits-section h2,
+.seller-bookings-section h2 {
+    color: #304c40;
+    font-size: 25px;
+    letter-spacing: -0.6px;
+    margin: 0 0 10px;
+}
+
+.seller-visits-section > p,
+.seller-bookings-section > p {
+    color: #748078;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+}
+
+/* VISIT REQUEST CARDS */
+
+.seller-visit-card {
+    background: #f8faf7;
+    border: 1px solid #dfe8dc;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.seller-visit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(48,76,64,0.09);
+}
+
+.seller-visit-card h3 {
+    color: #304c40;
+    font-size: 19px;
+    margin: 0 0 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #dfe8dc;
+}
+
+.seller-visit-card p {
+    color: #617267;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 9px 0;
+}
+
+.seller-visit-card strong {
+    color: #304c40;
+}
+
+/* VISIT ACTION BUTTONS */
+
+.visit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.visit-complete-btn,
+.visit-cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.visit-complete-btn {
+    background: #304c40;
+    color: #ffffff;
+}
+
+.visit-complete-btn:hover:not(:disabled) {
+    background: #54745e;
+    transform: translateY(-1px);
+}
+
+.visit-cancel-btn {
+    background: #fbe9e7;
+    color: #a43b32;
+    border: 1px solid #f2cbc6;
+}
+
+.visit-cancel-btn:hover:not(:disabled) {
+    background: #f7d8d4;
+}
+
+.visit-complete-btn:disabled,
+.visit-cancel-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* BOOKING REQUEST CARDS */
+
+.seller-booking-card {
+    background: #f8faf7;
+    border: 1px solid #dfe8dc;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.seller-booking-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(48,76,64,0.09);
+}
+
+.seller-booking-card h3 {
+    color: #304c40;
+    font-size: 19px;
+    margin: 0 0 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #dfe8dc;
+}
+
+.seller-booking-card p {
+    color: #617267;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 9px 0;
+}
+
+.seller-booking-card strong {
+    color: #304c40;
+}
+
+/* BOOKING ACTION BUTTONS */
+
+.booking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.booking-confirm-btn,
+.booking-cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.booking-confirm-btn {
+    background: #304c40;
+    color: #ffffff;
+}
+
+.booking-confirm-btn:hover:not(:disabled) {
+    background: #54745e;
+    transform: translateY(-1px);
+}
+
+.booking-cancel-btn {
+    background: #fbe9e7;
+    color: #a43b32;
+    border: 1px solid #f2cbc6;
+}
+
+.booking-cancel-btn:hover:not(:disabled) {
+    background: #f7d8d4;
+}
+
+/* FINALIZE SALE */
+
+.finalize-sale-btn {
+    background: #304c40;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.finalize-sale-btn:hover:not(:disabled) {
+    background: #54745e;
+}
+
+/* CREATE RENTAL AGREEMENT */
+
+.create-rental-btn {
+    background: #e8f0e7;
+    color: #304c40;
+    border: 1px solid #d3e1d1;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.create-rental-btn:hover:not(:disabled) {
+    background: #d5e4d3;
+}
+
+/* DISABLED BUTTONS */
+
+.booking-confirm-btn:disabled,
+.booking-cancel-btn:disabled,
+.finalize-sale-btn:disabled,
+.create-rental-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* EMPTY STATES */
+
+#sellerVisitsList > p,
+#sellerBookingsList > p {
+    color: #748078;
+    background: #f8faf7;
+    border: 1px dashed #cddcc9;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .seller-visits-section,
+    .seller-bookings-section {
+        padding: 22px 18px;
+    }
+
+    .seller-visit-card,
+    .seller-booking-card {
+        padding: 18px;
+    }
+
+    .seller-visits-section h2,
+    .seller-bookings-section h2 {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .seller-visit-card,
+    .seller-booking-card,
+    .visit-complete-btn,
+    .booking-confirm-btn {
+        transition: none;
+    }
+
+    .seller-visit-card:hover,
+    .seller-booking-card:hover,
+    .visit-complete-btn:hover,
+    .booking-confirm-btn:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   SELLER DASHBOARD — PHASE 4
+   TRANSACTION HISTORY REDESIGN
+========================================== */
+
+/* TRANSACTION HISTORY CONTAINER */
+
+.seller-transaction-section {
+    margin-top: 32px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e3e9df;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(48,76,64,0.05);
+}
+
+.seller-transaction-section h2 {
+    color: #304c40;
+    font-size: 25px;
+    letter-spacing: -0.6px;
+    margin: 0 0 10px;
+}
+
+.seller-transaction-section > p {
+    color: #748078;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* SALES & RENTAL GROUPS */
+
+.seller-transaction-group {
+    margin-top: 30px;
+}
+
+.seller-transaction-group + .seller-transaction-group {
+    padding-top: 26px;
+    border-top: 1px solid #e3e9df;
+}
+
+.seller-transaction-group h3 {
+    color: #304c40;
+    font-size: 20px;
+    font-weight: 650;
+    margin: 0 0 20px;
+    padding-left: 14px;
+    border-left: 4px solid #78947e;
+}
+
+/* TRANSACTION LISTS */
+
+#sellerSalesList,
+#sellerRentalsList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* INDIVIDUAL TRANSACTION CARD */
+
+.seller-transaction-card {
+    background: #f8faf7;
+    border: 1px solid #dfe8dc;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 0;
+    min-width: 0;
+    box-shadow: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seller-transaction-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(48,76,64,0.09);
+}
+
+/* PROPERTY TITLE */
+
+.seller-transaction-card h4 {
+    color: #304c40;
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -0.3px;
+    margin: 0 0 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #dfe8dc;
+}
+
+/* TRANSACTION DETAILS */
+
+.seller-transaction-card p {
+    color: #617267;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 9px 0;
+    overflow-wrap: anywhere;
+}
+
+.seller-transaction-card strong {
+    color: #304c40;
+    font-weight: 600;
+}
+
+/* EMPTY STATES */
+
+#sellerSalesList > p,
+#sellerRentalsList > p {
+    grid-column: 1 / -1;
+    color: #748078;
+    background: #f8faf7;
+    border: 1px dashed #cddcc9;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 0;
+    text-align: center;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .seller-transaction-section {
+        padding: 22px 18px;
+    }
+
+    .seller-transaction-section h2 {
+        font-size: 22px;
+    }
+
+    .seller-transaction-group h3 {
+        font-size: 18px;
+    }
+
+    #sellerSalesList,
+    #sellerRentalsList {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-transaction-card {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .seller-transaction-card {
+        transition: none;
+    }
+
+    .seller-transaction-card:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard | RealEstate Hub</title>
+    <link rel="stylesheet" href="buyer.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>RealEstate Hub</h2>
+
+    <div class="nav-right">
+        <span id="welcomeUser">Welcome, Buyer</span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Find Your Dream Property</h1>
+    <p>Explore properties that match your needs and budget.</p>
+</section>
+
+<section class="filters">
+    <input type="text" id="cityFilter"
+           placeholder="Search by city">
+
+    <select id="typeFilter">
+        <option value="">Buy or Rent</option>
+        <option value="SALE">For Sale</option>
+        <option value="RENT">For Rent</option>
+    </select>
+
+    <input type="number" id="minPrice"
+           placeholder="Minimum Budget" min="0">
+
+    <input type="number" id="maxPrice"
+           placeholder="Maximum Budget" min="0">
+
+    <select id="bedroomFilter">
+        <option value="">Any Bedrooms</option>
+        <option value="1">1+ Bedrooms</option>
+        <option value="2">2+ Bedrooms</option>
+        <option value="3">3+ Bedrooms</option>
+        <option value="4">4+ Bedrooms</option>
+    </select>
+
+    <button id="searchBtn">Search</button>
+    <button id="resetBtn">Reset</button>
+</section>
+
+<main>
+    <h2>Available Properties</h2>
+    <p id="resultCount"></p>
+
+    <div id="propertyList" class="property-grid"></div>
+
+<!-- MY PROPERTY BOOKINGS -->
+<section class="my-bookings-section">
+
+    <h2>My Bookings</h2>
+
+    <p>
+        Track your property booking requests,
+        confirmation status, and payments.
+    </p>
+
+    <div id="myBookingsList">
+        <p>Loading your bookings...</p>
+    </div>
+
+</section>
+
+<!-- BUYER TRANSACTION HISTORY -->
+<section class="transaction-history-section">
+
+    <h2>My Transaction History</h2>
+    <p>View your completed property purchases and rental agreements.</p>
+
+    <!-- PROPERTY PURCHASES -->
+    <div class="transaction-group">
+        <h3>My Property Purchases</h3>
+
+        <div id="buyerSalesList">
+            <p>Loading purchases...</p>
+        </div>
+    </div>
+
+    <!-- RENTAL AGREEMENTS -->
+    <div class="transaction-group">
+        <h3>My Rental Agreements</h3>
+
+        <div id="buyerRentalsList">
+            <p>Loading rental agreements...</p>
+        </div>
+    </div>
+
+</section>
+
+</main>
+
+<script src="buyer.js" defer></script>
+
+<!-- PROPERTY DETAILS POPUP -->
+<div id="propertyModal" class="property-modal" hidden>
+    <div class="property-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modalTitle">
+
+        <button id="closePropertyModal"
+                class="modal-close"
+                type="button"
+                aria-label="Close property details">
+            &times;
+        </button>
+
+        
+<!-- PROPERTY IMAGE GALLERY -->
+<div class="property-gallery">
+    <div class="gallery-main">
+        <img id="modalImage" alt="Property image">
+
+        <button type="button" id="prevImage"
+                class="gallery-arrow gallery-prev"
+                aria-label="Previous image">
+            &#10094;
+        </button>
+
+        <button type="button" id="nextImage"
+                class="gallery-arrow gallery-next"
+                aria-label="Next image">
+            &#10095;
+        </button>
+    </div>
+
+    <p id="imageCounter" class="image-counter"></p>
+
+    <div id="galleryThumbnails"
+         class="gallery-thumbnails"></div>
+</div>
+
+
+        <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+            <h2 id="modalPrice"></h2>
+
+            <p id="modalLocation"></p>
+
+            <div class="modal-features">
+                <span id="modalBedrooms"></span>
+                <span id="modalBathrooms"></span>
+                <span id="modalArea"></span>
+            </div>
+
+            <h3>Description</h3>
+            <p id="modalDescription"></p>
+
+            <h3>Address</h3>
+            <p id="modalAddress"></p>
+            
+<!-- SELLER INFORMATION -->
+<div class="seller-details">
+    <h3>Seller Information</h3>
+
+    <div class="seller-profile">
+        <div class="seller-avatar">👤</div>
+
+        <div>
+            <strong id="modalSellerName">
+                Property Owner
+            </strong>
+
+            <p class="seller-contact-note">
+                Contact the seller through an enquiry.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ENQUIRE SELLER -->
+<div class="enquiry-section">
+    <button type="button" id="enquireBtn"
+            class="enquire-btn">
+        Enquire Seller
+    </button>
+
+    <form id="enquiryForm" hidden>
+        <h3>Send an Enquiry</h3>
+
+        <label for="enquiryMessage">
+            Your Message
+        </label>
+
+        <textarea
+            id="enquiryMessage"
+            rows="4"
+            maxlength="1000"
+            placeholder="Hi, I am interested in this property. Is it still available?"
+            required
+        ></textarea>
+
+        <button type="submit" id="sendEnquiryBtn"
+                class="send-enquiry-btn">
+            Send Enquiry
+        </button>
+
+        <p id="enquiryStatus" role="status"></p>
+    </form>
+</div>
+
+<!-- BOOK PROPERTY VISIT -->
+<div class="visit-section">
+    <button type="button" id="bookVisitBtn">
+        Book a Visit
+    </button>
+
+    <form id="visitForm" hidden>
+        <h3>Schedule Property Visit</h3>
+
+        <label for="visitDate">Visit Date</label>
+        <input
+            type="date"
+            id="visitDate"
+            required
+        >
+
+        <label for="visitTime">Visit Time</label>
+        <input
+            type="time"
+            id="visitTime"
+            required
+        >
+
+        <label for="visitRemarks">
+            Remarks (Optional)
+        </label>
+        <textarea
+            id="visitRemarks"
+            rows="3"
+            maxlength="500"
+            placeholder="Any special requests?"
+        ></textarea>
+
+        <button type="submit" id="submitVisitBtn">
+            Confirm Visit
+        </button>
+
+        <p id="visitStatus" role="status"></p>
+    </form>
+
+<!-- PROPERTY BOOKING SECTION -->
+<div class="property-booking-section">
+
+    <h3>Interested in this Property?</h3>
+
+    <p>
+        Submit a booking request to the seller.
+        The seller will review your request
+        before confirming the booking.
+    </p>
+
+    <button
+        type="button"
+        id="bookPropertyBtn">
+        Book Property
+    </button>
+
+    <p id="bookingStatus" role="status"></p>
+
+</div>
+
+</div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

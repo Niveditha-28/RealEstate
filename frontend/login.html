@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | RealEstate Hub</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-brand">
+        <h1>RealEstate Hub</h1>
+        <p>Find your dream home or list your property.</p>
+    </div>
+
+    <div class="auth-card">
+        <h2>Welcome Back!</h2>
+        <p class="subtitle">Sign in to continue</p>
+
+        <form id="loginForm">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail"
+                   placeholder="Enter your email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword"
+                   placeholder="Enter your password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p id="loginMessage" class="message" role="status"></p>
+
+        <p class="auth-footer">
+            Don't have an account?
+            <a href="signup.html">Sign Up</a>
+        </p>
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
+
+
+/* ==========================================
+   REALESTATE HUB — MODERN MINIMAL THEME
+   LOGIN PAGE
+========================================== */
+
+:root {
+    --sage: #708c78;
+    --sage-dark: #304c40;
+    --cream: #f8f6f0;
+    --sand: #e8e2d6;
+    --text: #26332d;
+    --muted: #748078;
+}
+
+/* Page background */
+body {
+    background: linear-gradient(
+        135deg,
+        #f8f6f0 0%,
+        #edf2ea 55%,
+        #e2ebe1 100%
+    ) !important;
+
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--sage-dark);
+    letter-spacing: -0.5px;
+}
+
+/* Login card */
+form {
+    background: #ffffff;
+    border: 1px solid #e6ebe3;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 14px 40px rgba(48, 76, 64, 0.08);
+}
+
+/* Form labels */
+label {
+    color: var(--sage-dark);
+    font-weight: 600;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    background: #f8faf7;
+    border: 1px solid #d9e3d8;
+    border-radius: 10px;
+    padding: 13px 15px;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(112, 140, 120, 0.15);
+}
+
+/* Buttons */
+button[type="submit"] {
+    background: var(--sage-dark);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: var(--sage);
+    transform: translateY(-1px);
+}
+
+/* Links */
+a {
+    color: var(--sage-dark);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--sage);
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+}
+
